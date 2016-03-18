@@ -1,0 +1,33 @@
+
+/**
+@brief The main, catch-all namespace for TEO.
+ */
+namespace teo {}
+
+/**
+ * \defgroup force-torque-balance_libraries force-torque-balance Libraries
+ *
+ * @brief force-torque-balance libraries.
+ *
+ */
+
+/**
+ * \defgroup force-torque-balance_programs force-torque-balance Programs
+ *
+ * @brief force-torque-balance programs.
+ */
+
+/**
+ * \defgroup force-torque-balance_applications force-torque-balance Applications (Collections of Programs)
+ *
+ * @brief force-torque-balance applications (collections of programs).
+ */
+
+/**
+ * \defgroup force-torque-balance_examples force-torque-balance Examples
+ *
+ * @brief force-torque-balance examples.
+ */
+
+
+
