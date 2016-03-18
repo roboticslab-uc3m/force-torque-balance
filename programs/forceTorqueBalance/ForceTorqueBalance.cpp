@@ -18,6 +18,22 @@ bool ForceTorqueBalance::configure(yarp::os::ResourceFinder &rf) {
 
     printf("--------------------------------------------------------------\n");
 
+    yarp::os::Property jr3options;
+    jr3options.put("device","Jr3");
+    if( ! jr3device.open(jr3options) )
+    {
+        fprintf(stderr,"Could not open f/t device.\n");
+        return false;
+    }
+    printf("Opened f/t device.\n");
+
+    if( ! jr3device.view( iAnalogSensor ) )
+    {
+            fprintf(stderr,"Could not get iAnalogSensor interface from f/t device.\n");
+            return false;
+    }
+    printf("Could get iAnalogSensor interface from f/t device.\n");
+
     return true;
 }
 

@@ -4,6 +4,8 @@
 #define __FORCE_TORQUE_BALANCE_HPP__
 
 #include <yarp/os/all.h>
+#include <yarp/dev/all.h>
+#include <yarp/dev/IAnalogSensor.h>
 
 namespace teo
 {
@@ -19,6 +21,9 @@ class ForceTorqueBalance : public yarp::os::RFModule {
         bool configure(yarp::os::ResourceFinder &rf);
 
     protected:
+
+        yarp::dev::PolyDriver jr3device;
+        yarp::dev::IAnalogSensor* iAnalogSensor;
 
         virtual bool interruptModule();
         virtual double getPeriod();
