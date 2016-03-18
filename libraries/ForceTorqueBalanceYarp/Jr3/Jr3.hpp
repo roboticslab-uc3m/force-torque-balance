@@ -7,6 +7,11 @@
 #include <yarp/dev/all.h>
 #include <yarp/dev/IAnalogSensor.h>
 #include <sstream>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/ioctl.h>
+#include <fcntl.h>
+#include <unistd.h>
 
 #include "jr3pci-ioctl.h"
 

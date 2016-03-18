@@ -24,14 +24,16 @@ bool ForceTorqueBalance::configure(yarp::os::ResourceFinder &rf) {
 
     printf("--------------------------------------------------------------\n");
 
+    std::string ftDevice = rf.check("ftDevice",yarp::os::Value(DEFAULT_FT_DEVICE),"force torque device").asString();
+
     yarp::os::Property jr3options;
-    jr3options.put("device","Jr3");
+    jr3options.put("device",ftDevice);
     if( ! jr3device.open(jr3options) )
     {
-        fprintf(stderr,"Could not open f/t device.\n");
+        fprintf(stderr,"Could not open f/t device: %s.\n", ftDevice.c_str());
         return false;
     }
-    printf("Opened f/t device.\n");
+    printf("Opened f/t device: %s.\n", ftDevice.c_str());
 
     if( ! jr3device.view( iAnalogSensor ) )
     {

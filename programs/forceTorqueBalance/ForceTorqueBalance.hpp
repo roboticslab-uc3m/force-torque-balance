@@ -8,6 +8,7 @@
 #include <yarp/dev/IAnalogSensor.h>
 
 #define DEFAULT_RATE_MS 20
+#define DEFAULT_FT_DEVICE "Jr3"
 
 namespace teo
 {
