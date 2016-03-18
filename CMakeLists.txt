@@ -21,6 +21,7 @@ option(ENABLE_forceTorqueBalance "Choose if you want to compile forceTorqueBalan
 
 ### options: force default
 option(ENABLE_ForceTorqueBalanceYarp_Jr3 "Enable/disable compilation of ForceTorqueBalanceYarp_Jr3" TRUE)
+option(ENABLE_ForceTorqueBalanceYarp_Jr3Fake "Enable/disable compilation of ForceTorqueBalanceYarp_Jr3Fake" TRUE)
 
 if(MSVC)
   MESSAGE(STATUS "Running on windows")    

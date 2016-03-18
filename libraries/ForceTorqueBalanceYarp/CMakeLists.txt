@@ -21,6 +21,7 @@ IF (ENABLE_ForceTorqueBalanceYarp)
 
   yarp_begin_plugin_library(ForceTorqueBalanceYarp)
     add_subdirectory(Jr3)
+    add_subdirectory(Jr3Fake)
   yarp_end_plugin_library(ForceTorqueBalanceYarp)
 
   install(TARGETS ForceTorqueBalanceYarp DESTINATION lib)
