@@ -1,7 +1,7 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#ifndef __EXAMPLE_PROGRAM_HPP__
-#define __EXAMPLE_PROGRAM_HPP__
+#ifndef __FORCE_TORQUE_BALANCE_HPP__
+#define __FORCE_TORQUE_BALANCE_HPP__
 
 #include <yarp/os/all.h>
 
@@ -28,4 +28,4 @@ class ForceTorqueBalance : public yarp::os::RFModule {
 
 }  // namespace teo
 
-#endif  // __EXAMPLE_PROGRAM_HPP__
+#endif  // __FORCE_TORQUE_BALANCE_HPP__
