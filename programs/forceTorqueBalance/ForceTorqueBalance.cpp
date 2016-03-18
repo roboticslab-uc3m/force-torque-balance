@@ -7,6 +7,12 @@ namespace teo
 
 /************************************************************************/
 
+ForceTorqueBalance::ForceTorqueBalance(int rate) : yarp::os::RateThread(rate)
+{
+}
+
+/************************************************************************/
+
 bool ForceTorqueBalance::configure(yarp::os::ResourceFinder &rf) {
 
     printf("--------------------------------------------------------------\n");
@@ -35,6 +41,11 @@ bool ForceTorqueBalance::configure(yarp::os::ResourceFinder &rf) {
     printf("Could get iAnalogSensor interface from f/t device.\n");
 
     return true;
+}
+
+/************************************************************************/
+void ForceTorqueBalance::run() {
+
 }
 
 /************************************************************************/

@@ -7,6 +7,8 @@
 #include <yarp/dev/all.h>
 #include <yarp/dev/IAnalogSensor.h>
 
+#define DEFAULT_RATE_MS 20
+
 namespace teo
 {
 
@@ -16,9 +18,13 @@ namespace teo
  * @brief forceTorqueBalance
  *
  */
-class ForceTorqueBalance : public yarp::os::RFModule {
+class ForceTorqueBalance : public yarp::os::RFModule, public yarp::os::RateThread {
     public:
+        ForceTorqueBalance(int rate=DEFAULT_RATE_MS);
+
         bool configure(yarp::os::ResourceFinder &rf);
+
+        void run();
 
     protected:
 
