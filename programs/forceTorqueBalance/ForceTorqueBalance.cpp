@@ -40,11 +40,18 @@ bool ForceTorqueBalance::configure(yarp::os::ResourceFinder &rf) {
     }
     printf("Could get iAnalogSensor interface from f/t device.\n");
 
+    int numChannels = iAnalogSensor->getChannels();
+    ftData.resize( numChannels );
+
     return true;
 }
 
 /************************************************************************/
 void ForceTorqueBalance::run() {
+
+    iAnalogSensor->read(ftData);
+
+
 
 }
 

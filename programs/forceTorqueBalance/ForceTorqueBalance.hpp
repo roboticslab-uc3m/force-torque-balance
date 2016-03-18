@@ -31,6 +31,8 @@ class ForceTorqueBalance : public yarp::os::RFModule, public yarp::os::RateThrea
         yarp::dev::PolyDriver jr3device;
         yarp::dev::IAnalogSensor* iAnalogSensor;
 
+        yarp::sig::Vector ftData;
+
         virtual bool interruptModule();
         virtual double getPeriod();
         virtual bool updateModule();
