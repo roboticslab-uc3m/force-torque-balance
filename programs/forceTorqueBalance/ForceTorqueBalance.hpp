@@ -29,7 +29,7 @@ class ForceTorqueBalance : public yarp::os::RFModule, public yarp::os::RateThrea
 
     protected:
 
-        yarp::dev::PolyDriver jr3device;
+        yarp::dev::PolyDriver ftDevice;
         yarp::dev::IAnalogSensor* iAnalogSensor;
 
         yarp::sig::Vector ftData;

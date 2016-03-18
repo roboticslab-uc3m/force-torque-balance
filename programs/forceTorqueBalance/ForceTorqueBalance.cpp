@@ -24,18 +24,19 @@ bool ForceTorqueBalance::configure(yarp::os::ResourceFinder &rf) {
 
     printf("--------------------------------------------------------------\n");
 
-    std::string ftDevice = rf.check("ftDevice",yarp::os::Value(DEFAULT_FT_DEVICE),"force torque device").asString();
+    //-- f/t
+    std::string ftDeviceStr = rf.check("ftDevice",yarp::os::Value(DEFAULT_FT_DEVICE),"force torque device").asString();
 
-    yarp::os::Property jr3options;
-    jr3options.put("device",ftDevice);
-    if( ! jr3device.open(jr3options) )
+    yarp::os::Property ftOptions;
+    ftOptions.put("device",ftDeviceStr);
+    if( ! ftDevice.open(ftOptions) )
     {
-        fprintf(stderr,"Could not open f/t device: %s.\n", ftDevice.c_str());
+        fprintf(stderr,"Could not open f/t device: %s.\n", ftDeviceStr.c_str());
         return false;
     }
-    printf("Opened f/t device: %s.\n", ftDevice.c_str());
+    printf("Opened f/t device: %s.\n", ftDeviceStr.c_str());
 
-    if( ! jr3device.view( iAnalogSensor ) )
+    if( ! ftDevice.view( iAnalogSensor ) )
     {
             fprintf(stderr,"Could not get iAnalogSensor interface from f/t device.\n");
             return false;
@@ -44,6 +45,9 @@ bool ForceTorqueBalance::configure(yarp::os::ResourceFinder &rf) {
 
     int numChannels = iAnalogSensor->getChannels();
     ftData.resize( numChannels );
+
+    //-- robot
+
 
     return true;
 }
