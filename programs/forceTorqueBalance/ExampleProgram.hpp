@@ -9,12 +9,12 @@ namespace teo
 {
 
 /**
- * @ingroup exampleProgram
+ * @ingroup forceTorqueBalance
  *
- * @brief exampleProgram
+ * @brief forceTorqueBalance
  *
  */
-class ExampleProgram : public yarp::os::RFModule {
+class ForceTorqueBalance : public yarp::os::RFModule {
     public:
         bool configure(yarp::os::ResourceFinder &rf);
 

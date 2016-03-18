@@ -1,17 +1,17 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "ExampleProgram.hpp"
+#include "ForceTorqueBalance.hpp"
 
 namespace teo
 {
 
 /************************************************************************/
 
-bool ExampleProgram::configure(yarp::os::ResourceFinder &rf) {
+bool ForceTorqueBalance::configure(yarp::os::ResourceFinder &rf) {
 
     printf("--------------------------------------------------------------\n");
     if (rf.check("help")) {
-        printf("ExampleProgram options:\n");
+        printf("ForceTorqueBalance options:\n");
         printf("\t--help (this help)\t--from [file.ini]\t--context [path]\n");
         //printf("\t--file (default: \"%s\")\n",fileName.c_str());
     }
@@ -22,19 +22,19 @@ bool ExampleProgram::configure(yarp::os::ResourceFinder &rf) {
 }
 
 /************************************************************************/
-double ExampleProgram::getPeriod() {
+double ForceTorqueBalance::getPeriod() {
     return 2.0;  // Fixed, in seconds, the slow thread that calls updateModule below
 }
 
 /************************************************************************/
-bool ExampleProgram::updateModule() {
-    //printf("StateMachine in state [%d]. ExampleProgram alive...\n", stateMachine.getMachineState());
+bool ForceTorqueBalance::updateModule() {
+    //printf("StateMachine in state [%d]. ForceTorqueBalance alive...\n", stateMachine.getMachineState());
     return true;
 }
 
 /************************************************************************/
 
-bool ExampleProgram::interruptModule() {
+bool ForceTorqueBalance::interruptModule() {
     return true;
 }
 

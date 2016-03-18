@@ -14,10 +14,10 @@ endif(COMMAND cmake_policy)
 project(FORCE_TORQUE_BALANCE)
 
 ### options: cpp libraries
-option(ENABLE_BodyYarp "Choose if you want to compile BodyYarp" TRUE)
+option(ENABLE_ForceTorqueBalanceYarp "Choose if you want to compile ForceTorqueBalanceYarp" TRUE)
 
 ### options: cpp programs
-option(ENABLE_ForceTorqueBalanceYarp "Choose if you want to compile ForceTorqueBalanceYarp" TRUE)
+option(ENABLE_forceTorqueBalance "Choose if you want to compile forceTorqueBalance" TRUE)
 
 ### options: force default
 option(ENABLE_ForceTorqueBalanceYarp_Jr3 "Enable/disable compilation of ForceTorqueBalanceYarp_Jr3" TRUE)
