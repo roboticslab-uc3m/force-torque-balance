@@ -9,6 +9,10 @@
 
 #define DEFAULT_RATE_MS 20
 #define DEFAULT_FT_DEVICE "Jr3"
+#define DEFAULT_LEFT_LEG_DEVICE "remote_controlboard"
+#define DEFAULT_LEFT_LEG_REMOTE "/teo/leftLeg"
+#define DEFAULT_RIGHT_LEG_DEVICE "remote_controlboard"
+#define DEFAULT_RIGHT_LEG_REMOTE "/teo/rightLeg"
 
 namespace teo
 {
@@ -33,6 +37,11 @@ class ForceTorqueBalance : public yarp::os::RFModule, public yarp::os::RateThrea
         yarp::dev::IAnalogSensor* iAnalogSensor;
 
         yarp::sig::Vector ftData;
+
+        yarp::dev::PolyDriver leftLegDevice;
+        yarp::dev::IPositionDirect* leftLegPosition;
+
+        yarp::dev::PolyDriver rightLegDevice;
 
         virtual bool interruptModule();
         virtual double getPeriod();
