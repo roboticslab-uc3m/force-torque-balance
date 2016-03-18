@@ -28,8 +28,11 @@
 
 using namespace yarp::os;
 
-int main(int argc, char **argv) {
+YARP_DECLARE_PLUGINS(ForceTorqueBalanceYarp)
 
+int main(int argc, char *argv[]) {
+
+    YARP_REGISTER_PLUGINS(ForceTorqueBalanceYarp);
     ResourceFinder rf;
     rf.setVerbose(true);
     rf.setDefaultContext("forceTorqueBalance");
